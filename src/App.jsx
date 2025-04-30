@@ -1,5 +1,6 @@
 import WeatherForecast from './components/WeatherForecast/WeatherForecast.jsx'
-
+import WeatherIcon from './components/WeatherIcon/WeatherIcon.jsx'
+import WeatherData from './components/WeatherData/WeatherData.jsx';
 
 const weatherForecasts = [
   {
@@ -58,6 +59,30 @@ const App = () => {
           ></WeatherForecast>
         ))}
       </section>
+
+      <main>
+        {weatherForecasts.map((day, index) => (
+          <WeatherIcon 
+
+          key={index}
+          img={day.img}
+
+          />
+        ))}
+        </main>
+
+        <footer>
+        {weatherForecasts.map((day, index) => (
+          <WeatherData 
+          
+          key={index}
+          day={day.day}
+          conditions={day.conditions}
+          time={day.time}
+
+          />
+        ))}
+        </footer>
     </>
   )
 }
